@@ -1,0 +1,17 @@
+{
+  "budget": 1,
+  "nodes": ["n0", "n1", "n2"],
+  "sender_error_code": "E_UNKNOWN_SENDER",
+  "dep_error_code": "E_UNKNOWN_DEP",
+  "msg_error_code": "E_DUPLICATE_MESSAGE",
+  "stuck_error_code": "E_STUCK",
+  "event_error_code": "E_BAD_EVENT",
+  "state": { "delivered": [], "buffer": [], "seen": [], "applied": [] },
+  "events": [
+    { "id": 1, "kind": "send", "msg": "m1", "sender": "n0", "deps": [] },
+    { "id": 2, "kind": "send", "msg": "m2", "sender": "n1", "deps": ["m1"] },
+    { "id": 3, "kind": "send", "msg": "m3", "sender": "n2", "deps": ["m2"] },
+    { "id": 4, "kind": "send", "msg": "m4", "sender": "n0", "deps": ["m1"] },
+    { "id": 5, "kind": "send", "msg": "m5", "sender": "n1", "deps": ["m4"] }
+  ]
+}
